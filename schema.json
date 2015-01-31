@@ -1,3 +1,36 @@
 {
-  "test": "ok"
+  "title": "Recipe Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the recipe",
+      "type": "string",
+      "maxLength": 100
+    },
+    "description": {
+      "description": "The description of the recipe",
+      "type": "string",
+      "maxLength": 100
+    },
+    "cookingTime": {
+      "description": "The cooking time in seconds",
+      "type": "integer",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "preparationTime": {
+      "description": "The preparation time in seconds",
+      "type": "integer",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "servings": {
+      "description": "The number of person the recipe can feed",
+      "type": "integer",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    }
+  },
+  "additionalProperties": false,
+  "required": ["name", "cookingTime", "preparationTime"]
 }
