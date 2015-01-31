@@ -1,0 +1,28 @@
+{
+  "name": "recipe-schema",
+  "version": "0.0.1",
+  "description": "JSON Recipe Schema",
+  "main": "validator.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foodoclock/recipe-schema.git"
+  },
+  "authors": [
+    "Samuel Molinari <samuel@molinari.me>",
+    "Timothy Stott <stott.timothy@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/foodoclock/recipe-schema/issues"
+  },
+  "dependencies": {
+    "z-schema": "~3.3.3"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0"
+  }
+}
