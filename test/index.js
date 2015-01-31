@@ -2,7 +2,8 @@ var ZSchema   = require('z-schema');
 var expect    = require('chai').expect;
 var schema    = require('../schema.json');
 var validator = new ZSchema({
-  strictMode: true
+  strictMode: true,
+  ignoreUnresolvableReferences: true
 });
 
 describe('schema.json', function () {
