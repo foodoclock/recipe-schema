@@ -4,12 +4,11 @@
   "type": "object",
   "properties": {
     "name": {
-      "description": "The name of the recipe",
       "type": "string",
-      "maxLength": 100
+      "maxLength": 50
     },
     "description": {
-      "description": "The description of the recipe",
+      "description": "Short recipe description",
       "type": "string",
       "maxLength": 100
     },
@@ -30,8 +29,33 @@
       "type": "integer",
       "minimum": 0,
       "exclusiveMinimum": true
+    },
+    "ingredientItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "e.g. Tomatoes",
+            "type": "string",
+            "maxLength": 30
+          },
+          "unit": {
+            "type": "string",
+            "enum": ["kg", "g", "l", "ml", "tsp", "tbsp", "cm", "drop", "pinch"]
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": 0,
+            "exclusiveMinimum": true
+          }
+        },
+        "additionalProperties": false,
+        "required": ["name", "unit", "amount"]
+      },
+      "minItems": 1
     }
   },
   "additionalProperties": false,
-  "required": ["name", "cookingTime", "preparationTime"]
+  "required": ["name", "cookingTime", "preparationTime", "servings", "ingredientItems"]
 }
