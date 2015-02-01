@@ -54,8 +54,23 @@
         "required": ["name", "unit", "amount"]
       },
       "minItems": 1
+    },
+    "cookingStepItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "maxLength": 350
+          }
+        },
+        "additionalProperties": false,
+        "required": ["description"]
+      },
+      "minItems": 1
     }
   },
   "additionalProperties": false,
-  "required": ["name", "cookingTime", "preparationTime", "servings", "ingredientItems"]
+  "required": ["name", "cookingTime", "preparationTime", "servings", "ingredientItems", "cookingStepItems"]
 }
