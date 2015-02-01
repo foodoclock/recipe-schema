@@ -3,32 +3,39 @@
   "title": "Recipe Schema",
   "type": "object",
   "properties": {
-    "name": {
-      "type": "string",
-      "maxLength": 50
-    },
-    "description": {
-      "description": "Short recipe description",
-      "type": "string",
-      "maxLength": 100
-    },
-    "cookingTime": {
-      "description": "The cooking time in seconds",
-      "type": "integer",
-      "minimum": 0,
-      "exclusiveMinimum": true
-    },
-    "preparationTime": {
-      "description": "The preparation time in seconds",
-      "type": "integer",
-      "minimum": 0,
-      "exclusiveMinimum": true
-    },
-    "servings": {
-      "description": "The number of person the recipe can feed",
-      "type": "integer",
-      "minimum": 0,
-      "exclusiveMinimum": true
+    "basic": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "description": {
+          "description": "Short recipe description",
+          "type": "string",
+          "maxLength": 100
+        },
+        "cookingTime": {
+          "description": "The cooking time in seconds",
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": true
+        },
+        "preparationTime": {
+          "description": "The preparation time in seconds",
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": true
+        },
+        "servings": {
+          "description": "The number of person the recipe can feed",
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": true
+        }
+      },
+      "additionalProperties": false,
+      "required": ["name", "cookingTime", "preparationTime", "servings"]
     },
     "ingredientItems": {
       "type": "array",
@@ -72,5 +79,5 @@
     }
   },
   "additionalProperties": false,
-  "required": ["name", "cookingTime", "preparationTime", "servings", "ingredientItems", "cookingStepItems"]
+  "required": ["basic", "ingredientItems", "cookingStepItems"]
 }
