@@ -35,7 +35,7 @@
         }
       },
       "additionalProperties": false,
-      "required": ["name", "cookingTime", "preparationTime", "servings"]
+      "required": ["name", "preparationTime", "servings"]
     },
     "ingredientItems": {
       "type": "array",
