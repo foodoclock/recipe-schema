@@ -1,3 +1,83 @@
 {
-  "test": "ok"
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Recipe Schema",
+  "type": "object",
+  "properties": {
+    "info": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "description": {
+          "description": "Short recipe description",
+          "type": "string",
+          "maxLength": 100
+        },
+        "cookingTime": {
+          "description": "The cooking time in seconds",
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": true
+        },
+        "preparationTime": {
+          "description": "The preparation time in seconds",
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": true
+        },
+        "servings": {
+          "description": "The number of person the recipe can feed",
+          "type": "integer",
+          "minimum": 0,
+          "exclusiveMinimum": true
+        }
+      },
+      "additionalProperties": false,
+      "required": ["name", "preparationTime", "servings"]
+    },
+    "ingredientItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "e.g. Tomatoes",
+            "type": "string",
+            "maxLength": 30
+          },
+          "unit": {
+            "type": "string",
+            "enum": ["kg", "g", "l", "ml", "tsp", "tbsp", "cm", "drop", "pinch"]
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": 0,
+            "exclusiveMinimum": true
+          }
+        },
+        "additionalProperties": false,
+        "required": ["name", "amount"]
+      },
+      "minItems": 1
+    },
+    "cookingStepItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "maxLength": 350
+          }
+        },
+        "additionalProperties": false,
+        "required": ["description"]
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false,
+  "required": ["info", "ingredientItems", "cookingStepItems"]
 }
