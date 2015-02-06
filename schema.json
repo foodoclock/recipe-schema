@@ -58,7 +58,7 @@
           }
         },
         "additionalProperties": false,
-        "required": ["name", "unit", "amount"]
+        "required": ["name", "amount"]
       },
       "minItems": 1
     },
