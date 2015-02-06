@@ -3,7 +3,7 @@
   "title": "Recipe Schema",
   "type": "object",
   "properties": {
-    "basic": {
+    "info": {
       "type": "object",
       "properties": {
         "name": {
@@ -79,5 +79,5 @@
     }
   },
   "additionalProperties": false,
-  "required": ["basic", "ingredientItems", "cookingStepItems"]
+  "required": ["info", "ingredientItems", "cookingStepItems"]
 }
