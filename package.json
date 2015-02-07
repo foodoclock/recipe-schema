@@ -2,7 +2,7 @@
   "name": "recipe-schema",
   "version": "0.0.1",
   "description": "JSON Recipe Schema",
-  "main": "validator.js",
+  "main": "./index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec",
     "watch": "./node_modules/.bin/mocha --reporter spec --watch --watch-extensions js,json"

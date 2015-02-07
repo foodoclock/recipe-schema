@@ -1,6 +1,7 @@
 var ZSchema   = require('z-schema');
 var fs        = require('fs');
-var schema    = JSON.parse(fs.readFileSync( 'schema.json'), 'utf8');
+var path      = require('path');
+var schema    = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'schema.json'), 'utf8'));
 var validator = new ZSchema({
   strictMode: true,
   ignoreUnresolvableReferences: true
@@ -9,5 +10,7 @@ var validator = new ZSchema({
 module.exports = {
   validate: function (json, callback) {
     validator.validate(json, schema, callback);
-  }
+  },
+  schema: schema
 };
+
